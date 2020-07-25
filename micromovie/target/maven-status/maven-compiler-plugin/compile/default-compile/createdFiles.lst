@@ -1,0 +1,9 @@
+com\ms\micromovie\dto\MovieDetailDto.class
+com\ms\micromovie\dao\MovieDetailRepository.class
+com\ms\micromovie\document\MovieDetail.class
+com\ms\micromovie\MicroMovieApplication.class
+com\ms\micromovie\service\MovieServiceImpl.class
+com\ms\micromovie\controller\MovieController.class
+com\ms\micromovie\dto\MovieExceptionDto.class
+com\ms\micromovie\service\MovieService.class
+com\ms\micromovie\exception\BoundaryException.class
