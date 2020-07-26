@@ -1,5 +1,7 @@
 //export const  LIST_MOVIE = () => { return'LIST_MOVIE'; } ;
 
+export const UPDATE_DATA = 'UPDATE_DATA';
+
 export const ADD_MOVIE = 'ADD_MOVIE';
 export const LIST_MOVIE = 'LIST_MOVIE';
 export const EDIT_MOVIE = 'EDIT_MOVIE';

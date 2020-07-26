@@ -8,7 +8,8 @@ import {
 
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-
+import GetMovieList from './../redux/dataapi/movie/Movielistdata';
+import MultiplexListdata from './../redux/dataapi/multiplex/MultiplexListdata'
 //import Hidden from "@material-ui/core/Hidden";
 import Home from './../components/Home';
 import MovieDetails from './../components/movie/MovieDetails';
@@ -110,9 +111,9 @@ return (<div>
                         <List>
                             {[<Link to="/"> Home <SearchIcon /></Link>,
                             <Link to="/addmovie">Movie<Add /></Link>,
-                            <Link to="/moviedetails">Movie List<ViewList /></Link>,
+                            <Link onClick={(e)=>dispatch(GetMovieList()) }  to="/moviedetails">Movie List<ViewList /></Link>,
                             <Link to="/addmultiplex">Multiplex<Add /></Link>,
-                            <Link to="/multiplexdetails">Multiplex List<ViewList /></Link>
+                            <Link onClick={() => dispatch(MultiplexListdata())} to="/multiplexdetails">Multiplex List<ViewList /></Link>
 
                             ].map((text, index) => (
                                 <ListItem button key={text}>
@@ -124,7 +125,7 @@ return (<div>
                         <Divider />
                         <List>
                             {[<Link to="/addmoviealotments">Allot Movies <Add /></Link>,
-                            <Link to="/moviealotmentsdetails">Alloted List<ViewList /></Link>
+                            <Link onClick={() => dispatch({ type: 'LIST_ALLOTED' , payload : [] })} to="/moviealotmentsdetails">Alloted List<ViewList /></Link>
                             ].map((text, index) => (
                                 <ListItem button key={text}>
                                     <ListItemIcon>{index % 2 === 0 ? <MovMovieCreationRoundedies /> : <Theaters />}</ListItemIcon>
@@ -152,11 +153,11 @@ return (<div>
                                                 <Route path="/addmovie">
                                                     <AddMovie />
                                                 </Route>
-                                                <Route path="/moviedetails">
-                                                    <MovieDetails {...dispatch({ type: 'LIST_MOVIE' , payload : [] })} />
+                                                <Route  path="/moviedetails">
+                                                    <MovieDetails />
                                                 </Route>
                                                 <Route path="/multiplexdetails">
-                                                    <MultiplexDetails {...dispatch({ type: 'LIST_MULTIPLEX' , payload : [] })} />
+                                                    <MultiplexDetails  />
                                                 </Route>
                                                 <Route path="/addmultiplex">
                                                     <AddMultiplex />
@@ -165,7 +166,7 @@ return (<div>
                                                     <AddMovieAlotments />
                                                 </Route>
                                                 <Route path="/moviealotmentsdetails">
-                                                    <MovieAlotmentsDetails {...dispatch({ type: 'LIST_ALLOTED' , payload : [] })}/>
+                                                    <MovieAlotmentsDetails />
                                                 </Route>
                                                 <Route path="/search">
                                                     <Search />

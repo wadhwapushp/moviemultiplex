@@ -1,4 +1,4 @@
-import React from 'react';
+import React , { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { lighten, makeStyles ,withStyles } from '@material-ui/core/styles';
@@ -176,10 +176,26 @@ const useStyles = makeStyles((theme) => ({
 export default function MovieDetails() {
   const dispatch = useDispatch() ;
   let [ rows , setRows ]= React.useState();
-  //dispatch( { type: 'LIST_MOVIE' , payload : rows } );
+
+  //useEffect
+  useEffect(() => {
+    console.log('useEffect has been called!');
+ });
+
+ let st = useSelector(state =>state);
+console.log(st);
+
+//   useEffect(() =>{
+//   let s = useSelector(state => state.rows) ;
+//   console.log("Movidetails Render") ;
+// console.log(s) ; }
+//   );
+
   let movierows = useSelector(state => state.rows) ;
-  
-  console.log("In Movie details : newrows =" + movierows)
+  //let movierows = [];
+
+  console.log("In Movie details : newrows =")
+ // console.log(movierows)
 
   if (typeof movierows === "undefined") {
     rows = [];

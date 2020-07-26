@@ -5,5 +5,8 @@ const rows ={"alotments" : [{'id' :'AT1', 'movieId' :'MV1', 'multiplexId' :'MX1'
 
 export default function Alltmentlstdata() {
     //TODO 
+
+    console.log(" Alltmentlstdata() Called");
+
     return {"rows" : rows };
   }
